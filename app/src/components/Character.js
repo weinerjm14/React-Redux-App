@@ -7,19 +7,19 @@ const Character = props => {
   useEffect(() => {
     props.getSwInfo();
   }, []);
-  console.log("charter", props.characters.results);
+
   const info = props.characters.results;
-  console.log("info", info);
+
   return (
     <div>
       {props.isFetching ? (
         <h2>Jumping to HyperSpace!</h2>
       ) : (
-        <div>
+        <div className="outter-container">
           {info
             ? info.map(item => (
                 <section className="sw-container">
-                  <h2>Name: {item.name}.</h2>
+                  <h2>Name: {item.name}</h2>
                   <p>Height: {item.height}</p>
                   <p>Mass: {item.mass}</p>
                 </section>
